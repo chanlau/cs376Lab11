@@ -9,7 +9,7 @@
  *
  */
 #include "robot.h"
-
+#include <ctype.h>
 /**
  * main()
  *
@@ -21,9 +21,17 @@
  */
 int main(int argc, const char * argv[])
 {
+
+if(argc <= 1){
   robotPrintAscii();
-  dalekPrintAscii();
-  robotPrintMessage();
+}
+else if(isdigit(*argv[1])){
+robotPrintAscii();
+dalekPrintAscii();
+robotPrintMessage();
+}
+//  dalekPrintAscii();
+//  robotPrintMessage();
 
   return 0;
 }
